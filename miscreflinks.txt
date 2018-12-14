@@ -1,0 +1,3 @@
+http://tysonbarrett.com/jekyll/update/2018/02/11/r_dissertation/
+https://github.com/TysonStanley/dissertateUSU
+https://bookdown.org/yihui/rmarkdown/document-templates.html
