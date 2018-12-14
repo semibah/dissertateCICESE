@@ -11,7 +11,7 @@
 % --------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{dissertateCICESE}[2018/12/03 v1.0 DissertateUSU Class]
+\ProvidesClass{dissertateCICESE}[2018/12/03 v1.0 dissertateCICESE Class]
 \LoadClass[12pt, oneside, letterpaper]{book}
 
 %%%%%%%%%%%%%%%%%
@@ -38,6 +38,7 @@
 \RequirePackage{verbatim}
 \usepackage{indentfirst}
 
+
 % Fonts.
 \RequirePackage{color}
 \RequirePackage{xcolor}
@@ -60,7 +61,6 @@
                 figurewithin=chapter,
                 tablewithin=chapter]{caption}
 \RequirePackage{microtype}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%        Headings & Headers         %%
@@ -113,8 +113,8 @@
     % and table contents
     % \vspace{\baselineskip}
     \@starttoc{lot}     
-    \newpage
-    % \doublespaced
+%Signatures
+\newpage
 }
 % Ensure double-spacing between entries
 \renewcommand*\l@table{\par\addvspace{\bigskipamount}\pagebreak[2]
@@ -199,60 +199,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% LAYOUT: Title Page - info filled above    %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\maketitle}{
-	\thispagestyle{empty}
-  \begin{center}
-  \fontsize{15.84pt}{18}\selectfont
-\textbf{Centro de Investigación Científica y de Educación Superior de Ensenada, Baja California}
-\vspace{0.9cm}
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=2.75in]{./Figures/logoCicese2009.pdf}\\
-\end{center}
-\end{figure}
-\vspace{0.3cm}
-\vrule width 15.5cm height .5pt
-\fontsize{15.84pt}{18}\selectfont
-\textbf{{\@}\\
-  en \expandafter{\area}}
-\vrule width 15.5cm height .1pt
-
-\fontsize{15.84pt}{18}\selectfont
-\textbf{\expandafter{\@titulo}}
-\vspace{0.7cm}
-
-\normalsize
-Tesis
-\\ para cubrir parcialmente los requisitos necesarios para obtener el grado de
-\\
-\expandafter{\degree}
-\end{center}
-\begin{center}
-
-\vspace{0.35cm}
-%\textsf{
-  Presenta: \\
-  \textbf{\expandafter{\@author}}
-  %}
-\vfill
-%\textsf{
-  Ensenada, Baja California, Mexico
-  %}
-\\
-\yeardegree
-
-\end{center}
-\normalsize
-\linespread{1}\small\normalsize
-	
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LAYOUT: Title Page - info filled above    %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\maketitle}{\thispagestyle{empty}
 \begin{center}
-\fontsize{15.84pt}{18}\selectfont
+\fontsize{16pt}{18}\selectfont
 \textbf{Centro de Investigación Científica y de Educación Superior de Ensenada, Baja California}
 \vspace{0.9cm}
 \begin{figure}[!h]
@@ -262,7 +211,7 @@ Tesis
 \end{figure}
 \vspace{0.3cm}
 \vrule width 15.5cm height .5pt
-\fontsize{15.84pt}{18}\selectfont
+\fontsize{16pt}{18}\selectfont
 \textbf{{\degree}\\
   en \expandafter{\field}}
 \vrule width 15.5cm height .1pt
@@ -294,21 +243,60 @@ Tesis
 \end{center}
 \normalsize
 \linespread{1}\small\normalsize
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LAYOUT: Copy Right - info filled above    %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Signature page starts here
 \newpage
-\newcommand{\copyrightpage}{
-	\vspace*{\fill}
+\begin{center}
+\doublespacing
+    Tesis defendida por \\
+    \vspace{0.5cm}
+    \fontsize{16pt}{18}\textbf{\expandafter{\@author}} \\
+    \vspace{0.75cm}
+    y aprobada por el siguiente Comité
+    
+\vspace{12pt}
+	\vspace{20pt}
+	\begin{tabular}{cc}
+	  \centering
+    \makebox[2.75in]{\hrulefill} & \makebox[2.7in]{\hrulefill}\\    
+    \advisor                     & \coadvisor \\
+    Director de Tesis            & Co-Director de Tesis \\
+    & \\
+    & \\
+  \end{tabular}
+
   \begin{center}
-	\doublespacing
-	Copyright \hspace{3pt} 
-	  \scshape \small \copyright  \hspace{3pt} 
-	  \@author \hspace{3pt} \yeardegree\\
-	All Rights Reserved
+    \committeeone \\         
+    \committeetwo \\             
+    \committeethree \\               
   \end{center}
-	\vspace*{\fill}
+
+ \vspace{1.25cm}
+
+  \begin{figure}[!h]
+  \begin{center}
+  %change according to logos available in the logos folder.
+  \includegraphics[width=12.5mm]{./Figures/logos/compu.jpg}\\
+  \end{center}
+  \end{figure}
+
+  \begin{center}
+    \centering
+    \makebox[2.75in]{\hrulefill}\\             
+    \coordinator                \\            
+    Coordinador del Posgrado en \\            
+    \field \\
+    \vspace{0.75cm}
+
+    \makebox[2.75in]{\hrulefill}\\
+    \director \\
+    Director de Estudios de Posgrado \\
+    \end{center}
+    
+\vspace*{\fill}
+    \fontsize{9pt}{9}\selectfont
+      \textit{\@author \hspace{3pt} \small \copyright \yeardegree} \\
+      \textit{Queda prohibida la reproducción parcial o total de esta obra sin el permiso formal y explícito del autor y director de la tesis}
+\end{center}
+
 }
+

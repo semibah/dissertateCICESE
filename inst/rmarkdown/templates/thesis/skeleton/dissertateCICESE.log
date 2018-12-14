@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.4)  13 DEC 2018 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.4)  14 DEC 2018 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -9,7 +9,7 @@ LaTeX2e <2018-04-01> patch level 5
 LaTeX Warning: You have requested package `',
                but the package provides `dissertateCICESE'.
 
-Package: dissertateCICESE 2018/12/03 v1.0 DissertateUSU Class
+Package: dissertateCICESE 2018/12/03 v1.0 dissertateCICESE Class
 (/home/semibah/.TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/home/semibah/.TinyTeX/texmf-dist/tex/latex/base/bk12.clo
@@ -191,7 +191,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.44 \usepackage{
+l.45 \usepackage{
                  hyperref}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -467,7 +467,7 @@ This is a fatal error: LaTeX will abort.
 Here is how much of TeX's memory you used:
  11447 strings out of 494585
  209156 string characters out of 6178133
- 241050 words of memory out of 5000000
+ 241053 words of memory out of 5000000
  15075 multiletter control sequences out of 15000+600000
  532636 words of font info for 25 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
