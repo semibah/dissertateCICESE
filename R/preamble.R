@@ -9,6 +9,8 @@
 preamble_for_title = function(file = "preamble.tex"){
   cat("\\newcommand{\\yeardegree}{", params$year, "}",
       "\\newcommand{\\degree}{", params$degree, "}\n",
+      "\\newcommand{\\thesisauthor}{", rmarkdown::metadata$author, "}\n",
+      "\\newcommand{\\thesistitle}{", rmarkdown::metadata$title, "}\n",
       "\\newcommand{\\degreetitle}{",params$degreetitle, "}\n",
       "\\newcommand{\\field}{", params$field, "}\n",
       "\\newcommand{\\advisor}{", params$advisor, "}\n",
@@ -18,6 +20,8 @@ preamble_for_title = function(file = "preamble.tex"){
       "\\newcommand{\\committeethree}{", params$committee3, "}\n",
       "\\newcommand{\\coordinator}{", params$coordinator, "}\n",
       "\\newcommand{\\director}{", params$director, "}\n",
+      "\\newcommand{\\keywords}{", params$keywords, "}\n",
+      "\\newcommand{\\palabrasclave}{", params$palabrasclave, "}\n",
       "% Tables
       \\usepackage{booktabs}
       \\usepackage{threeparttable}

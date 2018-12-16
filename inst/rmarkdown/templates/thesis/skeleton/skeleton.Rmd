@@ -9,6 +9,7 @@ output:
           includes:
               in_header: preamble.tex
           keep_tex: yes
+          number_sections: true
 params:
   year: '2019'
   degree: 'Degree type'
@@ -21,8 +22,15 @@ params:
   committee3: 'Committee Member 3'
   coordinator: 'Program Coordinator'
   director: 'Director'
+  keywords: 'Something, pretty, important'
+  palabrasclave: 'Algo, muy, importante'
 geometry: [top=0.8in, bottom=0.8in, right=0.8in, left=1.18in]
 mainfont: OpenSans
+## For custom bibliography add your preferred .csl formatting file 
+##and a bib format file with your bibliography.
+#csl: ieee.csl
+#bibliography: bib.bib
+
 ---
 
 ```{r global_options, include=FALSE}
@@ -39,21 +47,78 @@ dissertateCICESE::preamble_for_title()
 \pagenumbering{roman}
 \pagestyle{empty}
 
+<!-- Abstract in Spanish-->
+\newpage
+\pagestyle{fancy}
+\fancyhead[L]{Resumen}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{}
+\chapter*{\fontsize{16pt}{18}\textbf{Resumen}}
+\addcontentsline{toc}{section}{Resumen}
+
+\begin{flushleft}
+Resumen de la tesis que presenta \textbf{\thesisauthor} como requisito parcial para la obtención del grado de \degreetitle en \field
+\end{flushleft}
+\vspace{0.75cm}
+\centering
+\textbf{\thesistitle} 
+\vspace{0.75cm}
+
+\raggedright Resumen aprobado por:
+\vspace{1.25cm}
+  \small
+	\begin{tabular}{cc}
+	  \centering
+    \makebox[2.75in]{\hrulefill} & \makebox[2.75in]{\hrulefill}\\    
+    \advisor                     & \coadvisor \\
+    Director de Tesis            & Co-Director de Tesis \\
+    & \\
+    & \\
+  \end{tabular}
+  
+\vspace*{\fill}
+      \raggedright\textbf{Palabras Clave: \palabrasclave}
+
+
 <!-- Abstract -->
 \newpage
 \pagestyle{fancy}
 \fancyhead[L]{Abstract}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\chapter*{ABSTRACT}
+\chapter*{\fontsize{16pt}{18}\textbf{Abstract}}
 \addcontentsline{toc}{section}{Abstract}
+
+\begin{flushleft}
+Abstract of the thesis presented by \textbf{\thesisauthor} as a partial requirement to obtain the \degreetitle in \field
+\end{flushleft}
+\vspace{0.75cm}
+\centering
+\textbf{\thesistitle} 
+\vspace{0.75cm}
+
+\raggedright Abstract approved by:
+\vspace{1.25cm}
+  \small
+	\begin{tabular}{cc}
+	  \centering
+    \makebox[2.75in]{\hrulefill} & \makebox[2.75in]{\hrulefill}\\    
+    \advisor                     & \coadvisor \\
+    Thesis Director              & Thesis Co-Director \\
+    & \\
+    & \\
+  \end{tabular}
+  
+\vspace*{\fill}
+      \raggedright\textbf{Keywords: \keywords}
+
 
 <!-- Dedication -->
 \newpage
 \fancyhead[L]{Dedication}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\chapter*{DEDICATION}
+\chapter*{\fontsize{16pt}{18}\textbf{Dedication}}
 \addcontentsline{toc}{section}{Dedication}
 
 Dedicate it.
@@ -63,7 +128,7 @@ Dedicate it.
 \fancyhead[L]{Acknowledgments}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\chapter*{ACKNOWLEDGEMENTS}
+\chapter*{\fontsize{16pt}{18}\textbf{Acknowledgments}}
 \addcontentsline{toc}{section}{Acknowledgments}
 
 Acknowledge them.
@@ -93,11 +158,11 @@ Acknowledge them.
 
 <!-- Introduction -->
 \newpage
-\fancyhead[L]{Introduction}
+\fancyhead[L]{Chapter 1's Title}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
 
-\chapter{INTRODUCTION}
+\chapter{Chapter 1's Title}
 
 Introduce the thing.
 
@@ -111,7 +176,6 @@ Introduce the thing.
 
 \chapter{Chapter 2's Title}
 
-Tells us more.
 
 \FloatBarrier
 
@@ -154,7 +218,7 @@ Well done.
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
 
-\chapter*{Appendixes}
+\chapter*{\fontsize{16pt}{18}\textbf{Appendixes}}
 
 Additional stuff
 
@@ -167,7 +231,7 @@ Additional stuff
 \addcontentsline{toc}{section}{Appendixes}
 
 
-\chapter*{REFERENCES}
+\chapter*{\fontsize{16pt}{18}\textbf{References}}
 \addcontentsline{toc}{section}{References}
 
 \setlength{\parindent}{-0.5in}

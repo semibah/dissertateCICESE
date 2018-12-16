@@ -12,7 +12,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dissertateCICESE}[2018/12/03 v1.0 dissertateCICESE Class]
-\LoadClass[12pt, oneside, letterpaper]{book}
+\LoadClass[11pt, oneside, letterpaper]{book}
 
 %%%%%%%%%%%%%%%%%
 %%   Options   %%
@@ -88,9 +88,9 @@
 \usepackage[titletoc]{appendix}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapfont}{\normalsize \normalfont}
-\renewcommand\contentsname{CONTENTS}
-\renewcommand\listfigurename{LIST OF FIGURES}
-\renewcommand\listtablename{LIST OF TABLES}
+\renewcommand\contentsname{\fontsize{16pt}{18}\textbf{Table of Contents}}
+\renewcommand\listfigurename{List of Figures}
+\renewcommand\listtablename{List of Tables}
 \renewcommand{\cftchapafterpnum}{\vspace{10pt}}
 \newcommand{\hsp}{\hspace{20pt}}
 
@@ -103,8 +103,8 @@
 \renewcommand*{\listoftables}{
     \singlespaced
     % \vskip0pt
-    \chapter*{ \begin{center} \textnormal{LIST OF TABLES}  \end{center}}
-    \addcontentsline{toc}{section}{LIST OF TABLES}
+    \chapter*{ \begin{raggedright} \fontsize{16pt}{18}\textbf{List of Tables}  \end{raggedright}}
+    \addcontentsline{toc}{section}{List of Tables}
     % \addcontentsline{toc}{chapter}{\textnormal{LIST OF TABLES}}
     % \addvspace{10pt}
     % \typeout{!! List of Tables...!!}
@@ -130,8 +130,8 @@
 \renewcommand*{\listoffigures}{
     \singlespaced
     % \vskip0pt
-    \chapter*{\begin{center} \textnormal{LIST OF FIGURES} \end{center}}
-    \addcontentsline{toc}{section}{LIST OF FIGURES}
+    \chapter*{\begin{raggedright} \fontsize{16pt}{18}\textbf{List of Figures} \end{raggedright}}
+    \addcontentsline{toc}{section}{List of Figures}
     % \addcontentsline{toc}{chapter}{\textnormal{LIST OF FIGURES}}
     % \addvspace{10pt} 
     % \typeout{!! List of Figures...!!}
@@ -159,11 +159,19 @@
 
 \usepackage{titlesec, blindtext, color}
 
-\titleformat{\chapter}[display]
-{\vspace{-60pt}\center}   %% spacing of chapter headings
-{{CHAPTER \thechapter}}
+
+\titleformat{\chapter}
+{\vspace{-60pt}\raggedright}   %% spacing of chapter headings
+{\fontsize{16pt}{16}\bfseries Chapter \thechapter: }
 {0pt}
 {}
+
+%\titleformat{\chapter}[display]
+%{\vspace{-60pt}\raggedright}   %% spacing of chapter headings
+%{Chapter \thechapter}
+%{0pt}
+%{}
+
 
 \titleformat{\section}[display]
 {\normalfont\normalsize\bfseries}
@@ -229,20 +237,16 @@
 \begin{center}
 
 \vspace{1.5cm}
-%\textsf{
   Presenta: \\
   \textbf{\expandafter{\@author}}
-  %}
 \vspace{4.0cm}
 \vfill
-  Ensenada, Baja California, Mexico
+  Ensenada, Baja California, México
 \\
 \yeardegree
 
 
 \end{center}
-\normalsize
-\linespread{1}\small\normalsize
 %%%% Signature page starts here
 \newpage
 \begin{center}
@@ -253,24 +257,24 @@
     \vspace{0.75cm}
     y aprobada por el siguiente Comité
     
-\vspace{12pt}
-	\vspace{20pt}
+\vspace{1.25cm}
+  \small
 	\begin{tabular}{cc}
 	  \centering
-    \makebox[2.75in]{\hrulefill} & \makebox[2.7in]{\hrulefill}\\    
+    \makebox[2.75in]{\hrulefill} & \makebox[2.75in]{\hrulefill}\\    
     \advisor                     & \coadvisor \\
     Director de Tesis            & Co-Director de Tesis \\
     & \\
     & \\
   \end{tabular}
-
+\vspace{0.3cm}
   \begin{center}
     \committeeone \\         
     \committeetwo \\             
     \committeethree \\               
   \end{center}
 
- \vspace{1.25cm}
+ \vspace{1.75cm}
 
   \begin{figure}[!h]
   \begin{center}
@@ -278,6 +282,8 @@
   \includegraphics[width=12.5mm]{./Figures/logos/compu.jpg}\\
   \end{center}
   \end{figure}
+  
+ \vspace{1.25cm}
 
   \begin{center}
     \centering
@@ -294,9 +300,115 @@
     
 \vspace*{\fill}
     \fontsize{9pt}{9}\selectfont
-      \textit{\@author \hspace{3pt} \small \copyright \yeardegree} \\
+      \textit{\@author \hspace{3pt} \copyright \yeardegree} \\
       \textit{Queda prohibida la reproducción parcial o total de esta obra sin el permiso formal y explícito del autor y director de la tesis}
 \end{center}
 
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LAYOUT: Title Page in ENGLISH - info filled above    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \iffalse comments chunk, might fail in "unexpected ways"
+% uncomment to activate and comment above
+% https://tex.stackexchange.com/questions/87303/multi-line-block-comments-in-latex
+\iffalse
+\renewcommand{\maketitle}{\thispagestyle{empty}
+\begin{center}
+\fontsize{16pt}{18}\selectfont
+\textbf{Ensenada Center for Scientific Research and Higher Education}
+\vspace{0.9cm}
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=2.75in]{./Figures/logoCicese2009.pdf}\\
+\end{center}
+\end{figure}
+\vspace{0.3cm}
+\vrule width 15.5cm height .5pt
+\fontsize{16pt}{18}\selectfont
+\textbf{{\degree}\\
+  in \expandafter{\field}}
+\vrule width 15.5cm height .1pt
+\fontsize{15.84pt}{18}\selectfont
+\vspace{0.7cm}
+\textbf{\expandafter{\@title}
+}
+\vspace{0.7cm}
+\normalsize
+\\ Thesis
+\\ to partially fulfill the necessary requirements to obtain the degree of
+\\
+\expandafter{\degreetitle}
+\end{center}
+\begin{center}
+
+\vspace{1.5cm}
+  Presenta: \\
+  \textbf{\expandafter{\@author}}
+\vspace{4.0cm}
+\vfill
+  Ensenada, Baja California, Mexico
+\\
+\yeardegree
+
+
+\end{center}
+%%% Signature page starts here
+\newpage
+\begin{center}
+\doublespacing
+    Thesis defended by \\
+    \vspace{0.5cm}
+    \fontsize{16pt}{18}\textbf{\expandafter{\@author}} \\
+    \vspace{0.75cm}
+    and approved by the following Committee
+    
+\vspace{1.25cm}
+  \small
+	\begin{tabular}{cc}
+	  \centering
+    \makebox[2.75in]{\hrulefill} & \makebox[2.75in]{\hrulefill}\\    
+    \advisor                     & \coadvisor \\
+    Thesis Director              & Thesis Co-Director \\
+    & \\
+    & \\
+  \end{tabular}
+\vspace{0.3cm}
+  \begin{center}
+    \committeeone \\         
+    \committeetwo \\             
+    \committeethree \\               
+  \end{center}
+
+ \vspace{1.75cm}
+
+  \begin{figure}[!h]
+  \begin{center}
+  %change according to logos available in the logos folder.
+  \includegraphics[width=12.5mm]{./Figures/logos/compu.jpg}\\
+  \end{center}
+  \end{figure}
+  
+ \vspace{1.25cm}
+
+  \begin{center}
+    \centering
+    \makebox[2.75in]{\hrulefill}\\             
+    \coordinator                \\            
+    Program Coordinator \\            
+    \field \\
+    \vspace{0.75cm}
+
+    \makebox[2.75in]{\hrulefill}\\
+    \director \\
+    Director of Postgraduate Studies \\
+    \end{center}
+    
+\vspace*{\fill}
+    \fontsize{9pt}{9}\selectfont
+      \textit{\@author \hspace{3pt} \copyright \yeardegree} \\
+      \textit{Partial or total reproduction of this work without the author's and thesis director's formal and explicit permission is strictly prohibited.}
+\end{center}
+
+}
+\fi

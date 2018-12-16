@@ -25,8 +25,8 @@
 \usepackage[top=0.8in,bottom=0.8in,right=0.8in,left=1.18in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={Predicción de sitios de acoplamiento de factores de transcripción a partir del perfil de activación de la histona H3K27ac},
-            pdfauthor={César Miguel Valdez Córdova},
+            pdftitle={Your Title},
+            pdfauthor={Your Name},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -48,7 +48,7 @@
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
+\setcounter{secnumdepth}{5}
 % Redefines (sub)paragraphs to behave more like sections
 \ifx\paragraph\undefined\else
 \let\oldparagraph\paragraph
@@ -75,27 +75,30 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{Predicción de sitios de acoplamiento de factores de transcripción a
-partir del perfil de activación de la histona H3K27ac}
+  \title{Your Title}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-    \author{César Miguel Valdez Córdova}
+    \author{Your Name}
     \preauthor{\centering\large\emph}
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
     \date{December 11, 2018}
 
-\newcommand{\yeardegree}{ 2019 } \newcommand{\degree}{ Maestria en Ciencias }
- \newcommand{\degreetitle}{ Maestro en Ciencias }
- \newcommand{\field}{ Ciencias de la Computación }
+\newcommand{\yeardegree}{ 2019 } \newcommand{\degree}{ Degree type }
+ \newcommand{\thesisauthor}{ Your Name }
+ \newcommand{\thesistitle}{ Your Title }
+ \newcommand{\degreetitle}{ Degree conferred to you }
+ \newcommand{\field}{ Area }
  \newcommand{\advisor}{ Advisor }
  \newcommand{\coadvisor}{ Coadvisor }
  \newcommand{\committeeone}{ Committee Member 1 }
  \newcommand{\committeetwo}{ Committee Member 2 }
  \newcommand{\committeethree}{ Committee Member 3 }
  \newcommand{\coordinator}{ Program Coordinator }
- \newcommand{\director}{ director }
+ \newcommand{\director}{ Director }
+ \newcommand{\keywords}{ Something, pretty, important }
+ \newcommand{\palabrasclave}{ Algo, muy, importante }
  % Tables
       \usepackage{booktabs}
       \usepackage{threeparttable}
@@ -116,17 +119,71 @@ partir del perfil de activación de la histona H3K27ac}
 
 \newpage
 \pagestyle{fancy}
+\fancyhead[L]{Resumen}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{}
+\chapter*{\fontsize{16pt}{18}\textbf{Resumen}}
+\addcontentsline{toc}{section}{Resumen}
+
+\begin{flushleft}
+Resumen de la tesis que presenta \textbf{\thesisauthor} como requisito parcial para la obtención del grado de \degreetitle en \field
+\end{flushleft}
+\vspace{0.75cm}
+\centering
+
+\textbf{\thesistitle} \vspace{0.75cm}
+
+\raggedright Resumen aprobado por: \vspace{1.25cm} \small
+
+\begin{tabular}{cc}
+      \centering
+    \makebox[2.75in]{\hrulefill} & \makebox[2.75in]{\hrulefill}\\    
+    \advisor                     & \coadvisor \\
+    Director de Tesis            & Co-Director de Tesis \\
+    & \\
+    & \\
+  \end{tabular}
+
+\vspace*{\fill}
+
+\raggedright\textbf{Palabras Clave: \palabrasclave}
+
+\newpage
+\pagestyle{fancy}
 \fancyhead[L]{Abstract}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\chapter*{ABSTRACT}
+\chapter*{\fontsize{16pt}{18}\textbf{Abstract}}
 \addcontentsline{toc}{section}{Abstract}
+
+\begin{flushleft}
+Abstract of the thesis presented by \textbf{\thesisauthor} as a partial requirement to obtain the \degreetitle in \field
+\end{flushleft}
+\vspace{0.75cm}
+\centering
+
+\textbf{\thesistitle} \vspace{0.75cm}
+
+\raggedright Abstract approved by: \vspace{1.25cm} \small
+
+\begin{tabular}{cc}
+      \centering
+    \makebox[2.75in]{\hrulefill} & \makebox[2.75in]{\hrulefill}\\    
+    \advisor                     & \coadvisor \\
+    Thesis Director              & Thesis Co-Director \\
+    & \\
+    & \\
+  \end{tabular}
+
+\vspace*{\fill}
+
+\raggedright\textbf{Keywords: \keywords}
 
 \newpage
 \fancyhead[L]{Dedication}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\chapter*{DEDICATION}
+\chapter*{\fontsize{16pt}{18}\textbf{Dedication}}
 \addcontentsline{toc}{section}{Dedication}
 
 Dedicate it.
@@ -135,7 +192,7 @@ Dedicate it.
 \fancyhead[L]{Acknowledgments}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
-\chapter*{ACKNOWLEDGEMENTS}
+\chapter*{\fontsize{16pt}{18}\textbf{Acknowledgments}}
 \addcontentsline{toc}{section}{Acknowledgments}
 
 Acknowledge them.
@@ -162,11 +219,11 @@ Acknowledge them.
 \pagenumbering{arabic}
 
 \newpage
-\fancyhead[L]{Introduction}
+\fancyhead[L]{Chapter 1's Title}
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
 
-\chapter{INTRODUCTION}
+\chapter{Chapter 1's Title}
 
 Introduce the thing.
 
@@ -178,8 +235,6 @@ Introduce the thing.
 \fancyfoot[C]{}
 
 \chapter{Chapter 2's Title}
-
-Tells us more.
 
 \FloatBarrier
 
@@ -219,7 +274,7 @@ Well done.
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{}
 
-\chapter*{Appendixes}
+\chapter*{\fontsize{16pt}{18}\textbf{Appendixes}}
 
 Additional stuff
 
@@ -231,7 +286,7 @@ Additional stuff
 \fancyfoot[C]{}
 \addcontentsline{toc}{section}{Appendixes}
 
-\chapter*{REFERENCES}
+\chapter*{\fontsize{16pt}{18}\textbf{References}}
 \addcontentsline{toc}{section}{References}
 
 \setlength{\parindent}{-0.5in}
